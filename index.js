@@ -1,7 +1,7 @@
 const express=require('express');
 const app = express();
 
-app.use('/books', function (req, res) {
+app.use('/', function (req, res) {
   res.send('Hello World')
 })
 
