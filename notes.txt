@@ -1,0 +1,6 @@
+--------1----------------------
+created backend folder
+added package.json using  npm init command
+installed dependecies for project   express,nodemon,dotenv,mongoosh
+added index.js file
+created a simple server
