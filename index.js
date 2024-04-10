@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const dotenv = require("dotenv");
-const USER_NUM=require('../backend/model/user')
 const bodyParser=require('body-parser')
 const vendorRoutes=require('./routes/vendorRoutes')
 dotenv.config();
