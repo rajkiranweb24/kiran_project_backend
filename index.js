@@ -2,9 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const dotenv = require("dotenv");
-const bodyParser=require('body-parser');
-const vendorRoutes=require('./routes/vendorRoutes');
-const firmRoutes=require('./routes/firmRoutes');
+const bodyParser = require('body-parser');
+const vendorRoutes = require('./routes/vendorRoutes');
+const firmRoutes = require('./routes/firmRoutes');
 dotenv.config();
 
 
@@ -21,19 +21,19 @@ const connectDB = async () => {
   } catch (error) {
     console.log(error);
     process.exit(1);
-  }   
+  }
 }
 
 connectDB();
-  
 
- 
+
+
 
 app.use(express.json());
 app.use(bodyParser.json())
 //create data
-app.use('/vendor',vendorRoutes)
-app.use('/firm',firmRoutes)
+app.use('/vendor', vendorRoutes)
+app.use('/firm', firmRoutes)
 
 app.listen(4800, () => console.log("gg server is running"));
 

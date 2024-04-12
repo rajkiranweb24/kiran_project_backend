@@ -24,3 +24,6 @@ created firm model
 created verifyToken middleware
 created addFirm model
 for image upload we used multer package
+
+---------------------5-------------------------
+created getAllVendor API
