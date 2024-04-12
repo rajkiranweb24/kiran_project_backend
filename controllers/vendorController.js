@@ -1,4 +1,4 @@
-const Vendor=require('../model/vendor')
+const Vendor=require('../model/Vendor')
 const jwt=require('jsonwebtoken')
 const bcrypt=require('bcryptjs')
 const dotenv=require("dotenv")
@@ -38,12 +38,19 @@ const venderRegister=async (req,res)=>{
 const vendorLogin=async(req,res)=>{
     const {email,password}=req.body
 
+    try{
+        
     const vendor=await Vendor.findOne({email})
     if(!vendor || ! (await bcrypt.compare(password,vendor.password)) ){
        return  res.status(401).json({status:"email and password no correct"})
     }
     const token=jwt.sign({vendorId:vendor._id},secretKey,{expiresIn:"1h"})
    return  res.status(200).json({status:"Login Successfully",token:token})
+
+    }catch(err){
+        return  res.status(500).json({error:"Internal Server Error"})
+    }
+
 }
 module.exports={
     venderRegister,

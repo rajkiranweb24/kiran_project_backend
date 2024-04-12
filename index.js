@@ -2,8 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const dotenv = require("dotenv");
-const bodyParser=require('body-parser')
-const vendorRoutes=require('./routes/vendorRoutes')
+const bodyParser=require('body-parser');
+const vendorRoutes=require('./routes/vendorRoutes');
+const firmRoutes=require('./routes/firmRoutes');
 dotenv.config();
 
 
@@ -32,10 +33,8 @@ app.use(express.json());
 app.use(bodyParser.json())
 //create data
 app.use('/vendor',vendorRoutes)
-app.get('/data',async(req,res)=>{
-res.send("Hello")
+app.use('/firm',firmRoutes)
 
-})
 app.listen(4800, () => console.log("gg server is running"));
 
 

@@ -13,3 +13,14 @@ created vendor routes
 
 added register route and functionality
 added login route and functionality
+
+-------------------3----------------------------
+created jwt token for login
+added middleware folder
+added verifytoken middleware function
+
+-----------------------4----------------------
+created firm model
+created verifyToken middleware
+created addFirm model
+for image upload we used multer package
